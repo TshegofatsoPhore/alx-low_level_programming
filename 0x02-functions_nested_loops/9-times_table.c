@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * times_table - prints multiplication table from 0 to 9
@@ -14,21 +15,15 @@ void times_table(void)
 		for (b = 0; b < 10; b++)
 		{
 			c = a * b;
-
-			if (c < 10)
+			if (b == 0)
+				printf("%d, ", c);
+			else
 			{
-				_putchar(' ');
-				_putchar(c + '0');
-				_putchar(',');
-				_putchar(' ');
-			} else if (c >= 10)
-			{
-				_putchar(c / 10 + '0');
-				_putchar(c % 10 + '0');
-				_putchar(',');
-				_putchar(' ');
+				printf("%2d", c);
+				if (b != 9)
+					printf(", ");
 			}
 		}
-		_putchar('\n');
+		printf("\n");
 	}
 }
